@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200&display=swap');
+.--label-font {
+    font-family: 'MuseoModerno', cursive;
+    font-weight: bold;
+}
+
+ul li {
+    display: inline-flex;
+    text-decoration: none;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.form-fields {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.form-card {
+    width: 780px;
+    /*border-style: solid;
+    margin: 0 auto;*/
+}
+
+.tipo_pessoa {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.tipo_pessoa ul li {
+    margin: 0 16px 40px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    width: 96%;
+    margin: 40px 0 60px 0;
+    margin: auto;
+}
+
+header ul {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav {
+    margin: 30px 0 40px 0;
+}
+
+nav ul {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+nav ul li {
+    width: fit-content;
+    text-decoration: none;
+    list-style-type: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+footer {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 80px 12px 12px 0;
+}
+
+@media (max-width: 960px) {
+    .form-card {
+        width: 600px;
+    }
+    .form-fields {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .tipo_pessoa {
+        width: 90%;
+        margin-bottom: 18px;
+        margin: 0 auto;
+    }
+    .tipo_pessoa ul li {
+        display: inline-flex;
+        flex: row;
+        align-items: center;
+        width: fit-content;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    footer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-card {
+        width: 300px;
+    }
+    .form-fields {
+        width: 240px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+    }
+    .tipo_pessoa {
+        margin-bottom: 18px;
+    }
+    .tipo_pessoa ul li {
+        display: flex;
+        flex: column;
+        align-items: center;
+        margin: 0;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    footer {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
