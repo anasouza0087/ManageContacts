@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import MaterialTable from 'material-table'
 import Modal from './Modal'
+import { connect } from 'react-redux'
 
 const people = {
     data: {
@@ -22,21 +23,34 @@ const columns = [
     { title: 'Código do cliente', field: 'codcli' }
 ]
 
-const Contacts = () => {
+const Contacts = (props) => {
+    console.log(props.nome)
 
     const [contacts, setContacts] = useState(people.data.data.people)
+
+    // debugger
+    // function addContact(nome, cpf, mobile, email, codcli) {
+    //     setContacts('Ricardo', 12388978976, 11987876565, ' ricardo@mkmservice.com', 789)
+    // }
 
     return (
         <>
             <Modal
-            
+            // handleAddContact={addContact}
             />
             <MaterialTable title="Gestão de Contatos"
                 data={contacts}
                 columns={columns}
             />
+            {/* < button onClick={addContact}>ADD</button > */}
         </>
     )
 }
 
-export default Contacts
+const mapStateToProps = (state) => {
+    return {
+        nome: state.nomes
+    }
+}
+
+export default connect(mapStateToProps)(Contacts)

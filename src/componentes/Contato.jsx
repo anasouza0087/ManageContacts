@@ -3,11 +3,12 @@ import '../styles/form_contato.css'
 import {
     Grid,
     TextField,
-    InputLabel,
-    MenuItem,
-    Select,
     FormControl,
-    Button,
+    InputLabel,
+    Select,
+    MenuItem,
+    Checkbox,
+    FormControlLabel
 } from '@material-ui/core';
 
 const Contato = () => {
@@ -16,7 +17,33 @@ const Contato = () => {
         <>
             <div className="form-card">
                 <div className="form-fields">
-                   <p>contatos</p>
+                    <Grid container rowSpacing={4} spacing={4}>
+                        <Grid
+                            item xs={12} sm={6} md={6}>
+                            <TextField id="email" variant="standard" size="small" label="E-Mail" fullWidth />
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={6}>
+                            <TextField id="celular" variant="standard" size="small" label="Celular" fullWidth />
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={6}>
+                            <TextField id="telefone" variant="standard" size="small" label="Telefone Fixo" fullWidth />
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={6}>
+                            <FormControl fullWidth size="small" >
+                                <InputLabel id="org">Grupos</InputLabel>
+                                <Select id="grupo" variant="standard">
+                                    <MenuItem>Grupo A</MenuItem>
+                                    <MenuItem>Grupo B</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} fullWidth size="small">
+                            <FormControlLabel
+                                control={<Checkbox name="opt-in" color="primary" />}
+                                label="Sua empresa assegura ter realizado opt in para este contato."
+                            />
+                        </Grid>
+                    </Grid>
                 </div>
             </div >
         </>
