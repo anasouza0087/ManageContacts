@@ -11,7 +11,7 @@ import {
 
 function SimpleDialog(props) {
 
-    const { open, onClose, handleAddContact } = props
+    const { open, onClose } = props
 
     const handleClose = () => {
         onClose()
@@ -43,7 +43,7 @@ function SimpleDialog(props) {
                         variant="contained"
                         color="primary"
                         className="btn"
-                        onClick={handleAddContact}>Salvar</Button>
+                        onClick={() => handleClose()}>Salvar</Button>
                 </DialogActions>
             </Dialog>
         </>
@@ -63,9 +63,9 @@ const Modal = (props) => {
     }
 
     // debugger
-    function handleAddContact(...props) {
-        console.log('Ricardo', 12388978976, 11987876565, ' ricardo@mkmservice.com', 789)
-    }
+    // function handleAddContact(...props) {
+    //     console.log('Ricardo', 12388978976, 11987876565, ' ricardo@mkmservice.com', 789)
+    // }
 
     return (
         <>

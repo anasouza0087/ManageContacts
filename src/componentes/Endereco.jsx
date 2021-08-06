@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/form_contato.css'
-import { Grid, TextField, Button } from '@material-ui/core';
+import { Grid, TextField } from '@material-ui/core';
 import { useState } from 'react';
 
 const Endereco = () => {
@@ -31,21 +31,21 @@ const Endereco = () => {
                             <TextField id="complemento" variant="standard" size="small" label="Complemento" fullWidth />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
-                            <TextField id="bairro" variant="standard" size="small" label="Bairro" fullWidth/>
+                            <TextField id="bairro" variant="standard" size="small" label="Bairro" fullWidth />
                         </Grid>
                         <Grid
                             item xs={12} sm={6} md={4}>
                             <TextField id="cidade" variant="standard" size="small" label="Cidade" fullWidth />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
-                            <TextField id="estado" variant="standard" size="small" label="Estado" fullWidth/>
+                            <TextField id="estado" variant="standard" size="small" label="Estado" fullWidth />
                         </Grid>
                         <Grid
                             item xs={12} sm={6} md={4}>
-                            <TextField id="cep" variant="standard" size="small" label="CEP" fullWidth/>
+                            <TextField id="cep" variant="standard" size="small" label="CEP" fullWidth />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
-                            <TextField id="país" variant="standard" size="small" label="País" fullWidth/>
+                            <TextField id="país" variant="standard" size="small" label="País" fullWidth />
                         </Grid>
                     </Grid>
                 </div>

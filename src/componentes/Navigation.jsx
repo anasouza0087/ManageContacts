@@ -34,21 +34,11 @@ const Navigation = () => {
                         <Tab label="Adicionais" value='4' />
                     </Tabs>
                 </AppBar>
-                <TabPanel value='0'>
-                    <Destaques />
-                </TabPanel>
-                <TabPanel value='1'>
-                    <Gerais />
-                </TabPanel>
-                <TabPanel value='2'>
-                    <Contato />
-                </TabPanel>
-                <TabPanel value='3'>
-                    <Endereco />
-                </TabPanel>
-                <TabPanel value='4'>
-                    <Adicionais />
-                </TabPanel>
+                <TabPanel value='0'><Destaques /></TabPanel >
+                <TabPanel value='1'><Gerais /></TabPanel >
+                <TabPanel value='2'><Contato /></TabPanel>
+                <TabPanel value='3'><Endereco /></TabPanel>
+                <TabPanel value='4'><Adicionais /></TabPanel>
             </TabContext>
         </>
     )

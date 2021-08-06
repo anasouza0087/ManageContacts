@@ -30,7 +30,7 @@ const Contato = () => {
                         </Grid>
                         <Grid item xs={12} sm={6} md={6}>
                             <FormControl fullWidth size="small" >
-                                <InputLabel id="org">Grupos</InputLabel>
+                                <InputLabel id="org">Grupo</InputLabel>
                                 <Select id="grupo" variant="standard">
                                     <MenuItem>Grupo A</MenuItem>
                                     <MenuItem>Grupo B</MenuItem>
