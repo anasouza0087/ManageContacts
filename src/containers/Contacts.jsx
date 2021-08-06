@@ -35,9 +35,14 @@ const Contacts = () => {
     //     setContacts(contacts.concat(newName))
     // }
 
+    function addContact(contact) {
+        setContacts([...contacts, contact])
+    }
+
     return (
         <>
             <Modal
+                addContact={addContact}
             // handleAddContact={addContact}
             />
             {/* <button onClick={addName}>ADD</button> */}

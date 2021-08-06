@@ -10,9 +10,9 @@ import {
     FormControl,
 } from '@material-ui/core';
 
-const PessoaFisica = () => {
+const PessoaFisica = ({person, setPerson}) => {
 
-    const [nome, setNome] = useState('')
+    // const [nome, setNome] = useState('')
 
     return (
         <>
@@ -26,9 +26,9 @@ const PessoaFisica = () => {
                                 variant="standard"
                                 size="small"
                                 label="Nome"
-                                value={nome}
+                                value={person?.nome}
                                 fullWidth
-                                onChange={e => setNome(console.log(e.target.value))} />
+                                onChange={e => setPerson({...person, nome: e.target.value})} />
                         </Grid>
                         <Grid
                             item xs={12} sm={6} md={4}>

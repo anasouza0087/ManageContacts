@@ -7,7 +7,7 @@ import Endereco from './Endereco';
 import Destaques from './Destaques';
 import Adicionais from './Adicionais';
 
-const Navigation = () => {
+const Navigation = ({person, setPerson}) => {
 
     const [value, setValue] = useState(0)
 
@@ -35,7 +35,10 @@ const Navigation = () => {
                     </Tabs>
                 </AppBar>
                 <TabPanel value='0'><Destaques /></TabPanel >
-                <TabPanel value='1'><Gerais /></TabPanel >
+                <TabPanel value='1'><Gerais 
+                 person={person}
+                 setPerson={setPerson}
+                /></TabPanel >
                 <TabPanel value='2'><Contato /></TabPanel>
                 <TabPanel value='3'><Endereco /></TabPanel>
                 <TabPanel value='4'><Adicionais /></TabPanel>
