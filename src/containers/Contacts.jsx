@@ -1,54 +1,78 @@
 import React, { useState } from 'react'
 import MaterialTable from 'material-table'
+import { Button } from '@material-ui/core'
 import Modal from '../componentes/Modal'
 
 const people = {
     data: {
         data: {
             people: [
-                { id: 1, nome: "Ana Paula", cpf: "33333363626", mobile: "5511998956655", email: "abezerra@mkmservice.com", codcli: "123" },
-                { id: 2, nome: "Everton Mourinho", cpf: "999653265453", mobile: "5511998956655", email: "emourinho@mkmservice.com", codcli: "321" },
-                { id: 3, nome: "Hércules Maranhão", cpf: "996656565656", mobile: "5511998956655", email: "hmaranhao@mkmservice.com", codcli: "222" },
+                { id: 1, nome: "Ana Paula", cpf: "33333363626", mobile: "5511998956655", email: "abezerra@mkmservice.com", apelido: 'dev-jr', codcli: "123" },
+                { id: 2, nome: "Everton Mourinho", cpf: "999653265453", mobile: "5511998956655", email: "emourinho@mkmservice.com", apelido: 'front-dev', codcli: "321" },
+                { id: 3, nome: "Hércules Maranhão", cpf: "996656565656", mobile: "5511998956655", email: "hmaranhao@mkmservice.com", apelido: 'front-dev', codcli: "222" },
             ]
         }, messages: []
     }
 }
 
 const columns = [
+    { title: 'ID', field: 'id' },
     { title: 'Nome', field: 'nome' },
     { title: 'CPF', field: 'cpf' },
     { title: 'Celular', field: 'mobile' },
     { title: 'E-mail', field: 'email' },
-    { title: 'Código do cliente', field: 'codcli' }
+    { title: 'Apelido', field: 'apelido' },
+    { title: 'Código do cliente', field: 'codcli' },
 ]
 
 const Contacts = () => {
 
-    // debugger
-    // const person = props
-
+    const [open, setOpen] = useState(false)
     const [contacts, setContacts] = useState(people.data.data.people)
-
-    // function addName() {
-    //     // const newName = [{ id: 4, nome: 'Ricardo', cpf: 123456, mobile: 432156, email: 'ricardo@mkmservice.com', codcli: 555 }]
-    //     const newName = [{ id: 4, nome: 'Aldrei' }]
-    //     setContacts(contacts.concat(newName))
-    // }
 
     function addContact(contact) {
         setContacts([...contacts, contact])
+        setOpen(false)
     }
 
     return (
         <>
-            <Modal
-                addContact={addContact}
-            // handleAddContact={addContact}
-            />
-            {/* <button onClick={addName}>ADD</button> */}
+            <Button
+                variant="contained"
+                color='primary'
+                onClick={() => setOpen(true)}>Novo Contato</Button>
+            {open &&
+                <Modal
+                    addContact={addContact}
+                    setOpen={setOpen}
+                />
+            }
             <MaterialTable title="Gestão de Contatos"
                 data={contacts}
                 columns={columns}
+                editable={{
+                    // onRowAdd: newData =>
+                    //     new Promise((resolve, reject) => {
+                    //         resolve()
+                    //     }),
+                    onRowUpdate: (newData, oldData) =>
+                        new Promise((resolve, reject) => {
+                            const dataUpdate = [...contacts]
+                            const index = oldData.id
+                            dataUpdate[index] = newData
+                            setContacts([...dataUpdate])
+                            resolve()
+                        })
+                    ,
+                    onRowDelete: oldData =>
+                        new Promise((resolve, reject) => {
+                            const dataDelete = [...contacts]
+                            const index = oldData.id
+                            dataDelete.splice(index, 1)
+                            setContacts([...dataDelete])
+                            resolve()
+                        })
+                }}
             />
         </>
     )

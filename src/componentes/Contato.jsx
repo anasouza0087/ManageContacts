@@ -11,7 +11,7 @@ import {
     FormControlLabel
 } from '@material-ui/core';
 
-const Contato = () => {
+const Contato = ({ person, setPerson }) => {
 
     return (
         <>
@@ -20,10 +20,26 @@ const Contato = () => {
                     <Grid container rowSpacing={4} spacing={4}>
                         <Grid
                             item xs={12} sm={6} md={6}>
-                            <TextField id="email" variant="standard" size="small" label="E-Mail" fullWidth />
+                            <TextField
+                                id="email"
+                                variant="standard"
+                                size="small"
+                                label="E-Mail"
+                                value={person?.email}
+                                fullWidth
+                                onChange={e => setPerson({ ...person, email: e.target.value })}
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6} md={6}>
-                            <TextField id="celular" variant="standard" size="small" label="Celular" fullWidth />
+                            <TextField
+                                id="celular"
+                                variant="standard"
+                                size="small"
+                                label="Celular"
+                                value={person?.mobile}
+                                fullWidth
+                                onChange={e => setPerson({ ...person, mobile: e.target.value })}
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6} md={6}>
                             <TextField id="telefone" variant="standard" size="small" label="Telefone Fixo" fullWidth />

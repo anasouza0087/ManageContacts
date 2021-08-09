@@ -9,39 +9,18 @@ import {
     DialogActions
 } from '@material-ui/core'
 
-
 const Modal = (props) => {
 
-    const [open, setOpen] = useState(false)
     const [person, setPerson] = useState({})
 
-    const handleOpen = () => {
-        setOpen(true)
-    }
-
-    const handleClose = () => {
-        setOpen(false)
-    }
-
-    // debugger
-    // function handleAddContact(...props) {
-    //     console.log('Ricardo', 12388978976, 11987876565, ' ricardo@mkmservice.com', 789)
-    // }
-
-    const savePerson = () =>{
-        debugger
+    const savePerson = () => {
         props.addContact(person)
     }
 
     return (
         <>
-            <Button
-                variant="contained"
-                color='primary'
-                onClick={handleOpen}>Novo Contato</Button>
-
             <Dialog
-                onClose={handleClose}
+                onClose={() => props.setOpen(false)}
                 open={open}
                 fullWidth='md'
                 maxWidth='md'
@@ -49,16 +28,16 @@ const Modal = (props) => {
                 <DialogTitle>Novo Contato</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        <Navigation 
-                        person={person}
-                        setPerson={setPerson}
+                        <Navigation
+                            person={person}
+                            setPerson={setPerson}
                         />
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button
                         className="btn"
-                        onClick={() => handleClose()}>Cancelar</Button>
+                        onClick={() => props.setOpen(false)}>Cancelar</Button>
                     <Button
                         variant="contained"
                         color="primary"

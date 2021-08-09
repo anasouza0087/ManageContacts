@@ -10,9 +10,7 @@ import {
     Radio
 } from '@material-ui/core';
 
-const Gerais = ({person, setPerson}) => {
-
-   
+const Gerais = ({ person, setPerson }) => {
 
     return (
         <>
@@ -20,13 +18,16 @@ const Gerais = ({person, setPerson}) => {
                 <div className="tipo_pessoa">
                     <FormControl component="fieldset">
                         <RadioGroup row aria-label="tipo_pessoa" name="row-radio-buttons-group">
-                            <FormControlLabel value="Pessoa Física" control={<Radio />} label="Pessoa Física" id='pf'  />
+                            <FormControlLabel value="Pessoa Física" control={<Radio />} label="Pessoa Física" id='pf' />
                             <FormControlLabel value="Pessoa Jurídica" control={<Radio />} label="Pessoa Jurídica" id='pj' />
                         </RadioGroup>
                     </FormControl>
                 </div>
                 <div>
-            <PessoaFisica />
+                    <PessoaFisica
+                        person={person}
+                        setPerson={setPerson}
+                    />
                 </div>
             </div >
         </>
