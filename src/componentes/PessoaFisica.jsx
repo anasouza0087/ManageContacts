@@ -50,7 +50,15 @@ const PessoaFisica = ({ person, setPerson }) => {
                                 onChange={e => setPerson({ ...person, cpf: e.target.value })} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
-                            <TextField id="dt_nasc" variant="standard" size="small" label="Data de Nascimento" fullWidth />
+                            <TextField
+                                id="dt_nasc"
+                                variant="standard"
+                                size="small"
+                                label="Data de Nascimento"
+                                value={person?.dtNasc}
+                                fullWidth
+                                onChange={e => setPerson({ ...person, dtNasc: e.target.value })}
+                            />
                         </Grid>
                         <Grid
                             item xs={12} sm={6} md={4}>

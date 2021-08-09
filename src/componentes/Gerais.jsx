@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/form_contato.css'
 import PessoaFisica from './PessoaFisica'
-import PessoaJuridica from './PessoaJuridica'
-import { useState } from 'react'
+// import PessoaJuridica from './PessoaJuridica'
+// import { useState } from 'react'
 import {
     FormControl,
     FormControlLabel,
