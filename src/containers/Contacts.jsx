@@ -47,7 +47,8 @@ const Contacts = () => {
                     setOpen={setOpen}
                 />
             }
-            <MaterialTable title="Gestão de Contatos"
+            <MaterialTable
+                title="Gestão de Contatos"
                 data={contacts}
                 columns={columns}
                 editable={{
@@ -68,6 +69,27 @@ const Contacts = () => {
                             setContacts([...dataDelete])
                             resolve()
                         })
+                }}
+                options={{
+                    rowStyle: {
+                        backgroundColor: '#e2effb',
+                        fontFamily: 'monospace',
+                        fontSize: '14px'
+                    },
+                    headerStyle: {
+                        fontFamily: 'monospace',
+                        fontSize: '18px',
+                        fontWeight: 'bold'
+                    },
+                }}
+                localization={{
+                    header: {
+                        actions: 'Editar',
+                    },
+                    body: {
+                        deleteTooltip: 'Excluir',
+                        editTooltip: 'Editar',
+                    },
                 }}
             />
         </>
